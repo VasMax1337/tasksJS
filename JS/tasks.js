@@ -87,3 +87,111 @@ const matrix = [
   ]
 
   getValueFromArray(matrix, 2, 1)
+
+
+
+// Решение Задачи № 6
+
+function startRocketCountdown(initialCount) {
+    while(initialCount >= 0) {
+        console.log(initialCount)
+        initialCount--
+    }
+        console.log("Старт!")
+}
+
+startRocketCountdown(9)
+
+
+
+// Решение Задачи № 7
+
+function printNumberStaircase(n) {
+    for (let i = 1; i <= n; i++) {        
+        let line = '';
+        for (let j = i; j <= 2 * i - 1; j++) {  
+            line += j;
+            if (j < 2 * i - 1) {
+                line += ' ';
+            }
+        }
+        console.log(line);
+    }
+}
+
+printNumberStaircase(5)
+
+
+
+// Решение Задачи № 8
+
+const num = [3, 9, 81, 6561, 43046721]
+
+function formatArray(arr) {
+    let arrey = []
+    if(arr === arrey || !Array.isArray(arr)) {
+        return ""
+    }
+    let result = ""
+    for(let i = 0; i < arr.length; i++) {
+        if(i >= arr.length - 1) {
+           result += ` ${arr[i]}`
+        } else {
+            result += ` ${arr[i]} ->` 
+        }
+    }
+    return result
+}
+
+
+
+console.log(formatArray(num))
+
+
+
+// Решение Задачи № 9
+
+function isSorted(arr) {
+    let result = arr[0]
+    if(!Array.isArray(arr)) {
+        return "Это не массив"
+    }
+    if(arr.length === 0) {
+        return "Массив пуст"
+    }
+    for(let i = 1; i < arr.length; i++) {
+        if(arr[i] > result) {
+            result = arr[i]
+        } else {
+            return `${arr[i]} меньше ${result}, поэтому массив отсортирован не по возрастанию`
+        }   
+    }
+    return "Массив отсортирован по возрастанию"
+}
+
+const num2 = [3, 9, -81, 6561, 43046721]
+
+console.log(isSorted(num2))
+
+
+
+// Решение Задачи № 10
+
+const arr = [
+    [-53,-2],
+    [42,9,77],
+    [0],
+    [72,4],
+    ]
+
+if(Array.isArray(arr)) {
+   let sum = 0
+   for(let i = 0; i < arr.length; i++) {
+       for(let j = 0; j < arr[i].length; j++) {
+           if(arr[i][j] >= 0) {
+               sum += arr[i][j]
+           }
+       }
+   }
+   console.log(sum)
+}
